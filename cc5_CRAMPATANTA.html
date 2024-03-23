@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 5
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1> Modified FLAMES </h1>
+
+        <button onclick="flames()">Match Names</button>
+        <h3 id="name"></h3>
+
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+
+        <script>
+            function flames(){
+               var name1 = prompt("Enter first name: ");
+               var name2 = prompt("Enter second name: ");
+               document.getElementById("name"). innerHTML = name1 + " & " + name2;
+               var totalChar = (name1.replace(/[^a-zA-Z]/g, "")) + (name2.replace(/[^a-zA-Z]/g, ""));
+               var flames = "FLAMES";   
+               let charNum = (totalChar.length%flames.length) - 1;
+               if(charNum == -1){
+                charNum = flames.length - 1;
+               }
+               var find = flames.charAt(charNum);   
+               switch(find){
+                case 'F':
+                document.getElementById("result"). innerHTML = find + " - FRIENDS";
+                break;
+                case 'L':
+                document.getElementById("result"). innerHTML = find + " - LOVERS";
+                break;
+                case 'A':
+                document.getElementById("result"). innerHTML = find + " - ACQUAINTANCES";
+                break;
+                case 'M':
+                document.getElementById("result"). innerHTML = find + " - MARRIAGE";
+                break;
+                case 'E':
+                document.getElementById("result"). innerHTML = find + " - ENEMIES";
+                break;
+                case 'S':
+                document.getElementById("result"). innerHTML = find + " - SWEETHEARTS";
+                break;
+               }
+            }
+        </script>
+    </body>
+</html>
